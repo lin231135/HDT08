@@ -1,3 +1,5 @@
+package uvg.edu.gt;
+
 // Clase Paciente que implementa la interfaz Comparable para comparar pacientes por su código de emergencia
 class Paciente implements Comparable<Paciente> {
     private String nombre;
