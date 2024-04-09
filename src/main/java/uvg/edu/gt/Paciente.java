@@ -1,7 +1,9 @@
 package uvg.edu.gt;
 
+import java.util.Objects;
+
 // Clase Paciente que implementa la interfaz Comparable para comparar pacientes por su código de emergencia
-class Paciente implements Comparable<Paciente> {
+public class Paciente implements Comparable<Paciente> {
     private String nombre;
     private String sintoma;
     private char codigoEmergencia;
@@ -10,6 +12,21 @@ class Paciente implements Comparable<Paciente> {
         this.nombre = nombre;
         this.sintoma = sintoma;
         this.codigoEmergencia = codigoEmergencia;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Paciente paciente = (Paciente) obj;
+        return codigoEmergencia == paciente.codigoEmergencia &&
+                Objects.equals(nombre, paciente.nombre) &&
+                Objects.equals(sintoma, paciente.sintoma);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre, sintoma, codigoEmergencia);
     }
 
     public char getCodigoEmergencia() {
