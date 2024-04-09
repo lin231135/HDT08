@@ -2,12 +2,21 @@ package uvg.edu.gt;
 
 import java.util.Objects;
 
-// Clase Paciente que implementa la interfaz Comparable para comparar pacientes por su código de emergencia
+/**
+ * Clase que representa un paciente en el sistema de atención médica.
+ * Implementa la interfaz Comparable para comparar pacientes por su código de emergencia.
+ */
 public class Paciente implements Comparable<Paciente> {
     private String nombre;
     private String sintoma;
     private char codigoEmergencia;
 
+    /**
+     * Constructor de la clase Paciente.
+     * @param nombre Nombre del paciente.
+     * @param sintoma Síntoma o descripción de la condición del paciente.
+     * @param codigoEmergencia Código de emergencia asignado al paciente.
+     */
     public Paciente(String nombre, String sintoma, char codigoEmergencia) {
         this.nombre = nombre;
         this.sintoma = sintoma;
@@ -29,6 +38,10 @@ public class Paciente implements Comparable<Paciente> {
         return Objects.hash(nombre, sintoma, codigoEmergencia);
     }
 
+    /**
+     * Método que devuelve el código de emergencia del paciente.
+     * @return El código de emergencia del paciente.
+     */
     public char getCodigoEmergencia() {
         return codigoEmergencia;
     }

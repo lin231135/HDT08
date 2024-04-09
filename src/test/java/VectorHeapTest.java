@@ -3,8 +3,14 @@ import org.junit.Test;
 import uvg.edu.gt.VectorHeap;
 import uvg.edu.gt.Paciente; 
 
+/**
+ * Clase de prueba para la clase VectorHeap.
+ */
 public class VectorHeapTest {
 
+    /**
+     * Prueba para el método add de VectorHeap.
+     */
     @Test
     public void testAdd() {
         VectorHeap<Paciente> heap = new VectorHeap<>();
@@ -16,6 +22,9 @@ public class VectorHeapTest {
         assertEquals(new Paciente("Juan", "Fiebre", 'A'), heap.getFirst());
     }
 
+    /**
+     * Prueba para el método remove de VectorHeap.
+     */
     @Test
     public void testRemove() {
         VectorHeap<Paciente> heap = new VectorHeap<>();
